@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .calculator {
+        display: none;
+        width: 280px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 5px;
+        padding: 5px;
+        background-color: dimgrey;
+        border-radius: 5px;
+      }
+      input[type="text"] {
+        grid-column: 1 / span 4;
+        font-size: 24px;
+        text-align: right;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Analist <span>Developer</span></h1>
+      <nav>
+        <ul aria-label="Navegação primária" class="navegacao-primaria">
+          <li><a href="" class="link-topo">Home</a></li>
+          <li><a href="#about" class="link-topo">About</a></li>
+          <li><a href="#proficiency" class="link-topo">Proficiency</a></li>
+          <li><a href="#resume" class="link-topo">Resume</a></li>
+          <li><a href="#projects" class="link-topo">My Projects</a></li>
+          <li><a href="#philosophy" class="link-topo">Philosophy</a></li>
+        </ul>
+        <i class="fa-solid fa-bars"></i>
+      </nav>
+    </header>
+    <section aria-label="seção curriculo dowload" class="section-div" id="Home">
+      <div>
+        <h2>Hi There! I'm</h2>
+        <h2 class="digitando">Full Stack Analist Developer</h2>
+        <p>
+          Dedicado profissional de análise e desenvolvimento de sistemas, com
+          solida experiência em C# .Net Core, Net Framework, Angular 9+, HTML5,
+          CI/CD, Javascript, Typescript, React, CSS, PHP, SQL, Bootstrap,
+          versionamento Git, Metodologias ágeis Scrum/Kanbam/XP, design
+          patterns, inglês profissional e espanhol, quero contribuir com minha
+          expertise para o crescimento da equipe e soluções inovadoras.
+        </p>
+        <a href="Curriculo/Developer.pdf" target="_blank">Dowload CV</a>
+        <div class="calculadora" style="display: none">
+          <h2>Calculator</h2>
+          <p id="resultado"></p>
+          <table>
+            <tr>
+              <td><button class="botao" onclick="clean()">C</button></td>
+              <td><button class="botao" onclick="back()"><</button></td>
+              <td><button class="botao" onclick="insert('/')">/</button></td>
+              <td><button class="botao" onclick="insert('*')">X</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('7')">7</button></td>
+              <td><button class="botao" onclick="insert('8')">8</button></td>
+              <td><button class="botao" onclick="insert('9')">9</button></td>
+              <td><button class="botao" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('4')">4</button></td>
+              <td><button class="botao" onclick="insert('5')">5</button></td>
+              <td><button class="botao" onclick="insert('6')">6</button></td>
+              <td><button class="botao" onclick="insert('+')">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="botao" onclick="insert('1')">1</button></td>
+              <td><button class="botao" onclick="insert('2')">2</button></td>
+              <td><button class="botao" onclick="insert('3')">3</button></td>
+              <td rowspan="2">
+                <button
+                  class="botao"
+                  style="height: 106px"
+                  onclick="calcular()"
+                >
+                  =
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <button
+                  class="botao"
+                  style="width: 106px"
+                  onclick="insert('0')"
+                >
+                  0
+                </button>
+              </td>
+              <td><button class="botao" onclick="insert('.')">.</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="fundo">       
+        <ul aria-label="Navegação secundaria">
+          <li>
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <h3>Click and solve your logic</h3>
+          </li>
+        </ul>               
+      </div>
+    </section>    
+      <main id="about">
+        <article aria-label="seção sobre mim" class="sobre">
+          <div class="sobre_titulo">
+            <h1>About Me</h1>
+            <p>Professional Profile - There is All About me</p>
+            <div aria-label="Seção apenas de ilustrações de botões">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div> 
+          <img src="img/Sete.png" alt="Sete.png" />         
+          <div class="sobre_conteudo">
+            <div class="sobre_texto">
+              <h1>I'm Seteve Conde</h1>
+              <p>
+                Graduado em analise e desenvolvimento de sistemas & Data
+                Science, formado em administração e gestão de equipes, com
+                inglês profissional e espanhol avançado, participei de projetos
+                com sistemas para área financeira e comercial utilizando
+                tecnologias como mensageria, micro serviços, design patterns e
+                implantação de processo para melhoria continua, 6S, WCM, WMS,
+                MVC, TDD, Azure devops, Git flow e metodologias ágeis como
+                Scrum, cristal, XP
+                <br />
+                <br />
+                Tambem tive a oportunidade de acompanhar o ciclo de vida de
+                software de ponta a ponta desde o levantamento dos requisitos
+                passando pela modelagem e arquitetura, implementação, testes
+                automatizados e implantação com posterior acompanhamento e
+                manutenção.
+              </p>
+            </div>
+            <div class="sobre_info">
+              <p>
+                <i class="fa-solid fa-calendar-days"></i>Date of birth: 06 mai
+                1977
+              </p>
+              <p>
+                <i class="fa-sharp fa-solid fa-laptop-code"></i>Developer:
+                Available
+              </p>
+              <p>
+                <i class="fa-solid fa-location-dot"></i>Address: Joinville, SC,
+                Brazil
+              </p>
+              <p>
+                <i class="fa-sharp fa-solid fa-globe"></i>Langages: English,
+                Espanõl, Mandarin
+              </p>
+              <p><i class="fa-solid fa-flag"></i>Nationality: Brazilian</p>
+              <p style="color: #020202">
+                <i class="fa-solid fa-phone-volume"></i>Phone: +55 47-984951269
+              </p>
+              <p>
+                <i class="fa-solid fa-envelope"></i>Email:
+                steve.count.light@gmail.com
+              </p>
+            </div>
+          </div>
+        </article>
+      </main>   
+    <section class="services" id="proficiency">
+      <div class="sobre_titulo">
+        <h1>Proficiency</h1>
+        <p>Professional Profile - There is All About me</p>
+        <div aria-label="Seção apenas de ilustrações de botões">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="my_services">
+        <ul aria-label="Navegação secundaria">
+          <li>
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+            <h3>Backend Developer</h3>
+            <p>
+              Experiência em desenvolvimento com .Net Core, .Net framework,
+              Dapper, design patterns, MVC, DDD, Clean Code, SOLID, NodeJs,
+              CI/CD, microserciços e APIs.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-globe"></i>
+            <h3>FrontEnd Developer</h3>
+            <p>
+              Experiência em desenvolvimento com Angular, React, html5, sass,
+              scss, bootstrap, Blazor/Razor, SPAs.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-camera"></i>
+            <h3>Bancos de dados</h3>
+            <p>
+              Experiência com Bancos de dados relacionais Microsoft Sql Server e
+              Oracle AWS aplicando PL-SQL, T-SQL; Tambem possuo experiência com
+              bancos de dados NoSql como MongoDB.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>SEO Analyst</h3>
+            <p>
+              Analise e desenvolvimento de aplicações comerciais construidas com
+              front em Angular e backend em .Net Core,SQL, ciclo completo de
+              vida de software desde o levantamento de requisitos, planejamento
+              e modelagem, desenvolvimento, entrega e suporte ao cliente.
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-medal"></i>
+            <h3>Quality Assurance</h3>
+            <p>
+              Experiência no desenvolvimento TDD implementando testes unitários
+              e automatizados utilizando xUnit, MSTest, NUnit, Jasmine, Jest.
+            </p>
+          </li>
+          <li>
+            <i class="fa-sharp fa-solid fa-palette"></i>
+            <h3>Devops</h3>
+            <p>
+              Experiência com Devops utilizando CI/CD, Automação de
+              infraestrutura, Monitoramento e Observabilidade, Cultura
+              colaborativa, práticas seguras, gerenciamento de configuração,
+              orquestração de contêineres, provisionamento na nuvem visando
+              melhorar a eficiência, escalabilidade e confiabilidade.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="my_resume" id="resume">
+      <div class="sobre_titulo">
+        <h1>My Resume</h1>
+        <p>See a summary of my Professional Experiences.</p>
+        <div aria-label="Seção apenas de ilustrações de botões">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="resume_gerenico">
+        <h2 class="experience">
+          <i class="fa-solid fa-handshake"></i>EXPERIENCE
+        </h2>
+        <div class="experience_content">
+          <div>
+            <span>2019-2021</span>
+            <h3>Desenvolveror - Freelance</h3>
+            <p>
+              Desenvolvimento e manutenção de aplicações comerciais para
+              pequenas empresas da minha região.
+            </p>
+            <br />
+            <br />
+            <h5>Clique nos circulos abaixo para visualizar nova experiência</h5>
+            <br />
+            <li style="text-align: center"><i class="fa fa-arrow-down"></i></li>
+          </div>
+          <div>
+            <span>2021-2022</span>
+            <h3>Desenvolvedor - .Net + Angular - HouseSkillSoft</h3>
+            <p>
+              Analise e desenvolvimento de aplicações comerciais em Angular e
+              .Net Core,SQL, typescript ciclo de vida de software desde o
+              levantamento de requisitos, planejamento e modelagem,
+              desenvolvimento, entrega e suporte ao cliente.
+            </p>
+          </div>
+          <div>
+            <span>2022-2022</span>
+            <h3>Analista Desenvolvedor - CiaTecnica</h3>
+            <p>
+              Desenvolvimento de projeto internacional da área financeira
+              utilizando as tecnologias React native, .Net framework/Core, MVC,
+              DDD, Clean code, html5, scss, micro serviços, SQL Server, AWS,
+              kafka, API Rest, design patterns e integrações assíncronas,
+              metodologias ágeis e Azure Devops.
+            </p>
+          </div>
+          <div>
+            <span>2022-2023</span>
+            <h3>Analista Desenvolvedor - Stone</h3>
+            <p>
+              Desenvolvimento e manutenção de aplicações da área financeira com
+              serviços automatizados aplicando design patterns, .Net Core, .Net
+              framework Core, Angular, Blazor, message brokers RabittMq,
+              metodologias ageis Skrum/Kanbam, vercionamento Git, banco de dados
+              AWS.
+            </p>
+          </div>
+          <ul>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          </ul>
+        </div>
+        <h2 class="education"><i class="fa-solid fa-book"></i>EDUCATION</h2>
+        <div class="education_content">
+          <div>
+            <span>2020 - 2023</span>
+            <h3>Analise e desenvolvimento de sistemas - Uniasselvi</h3>
+            <p>Concluido.</p>
+            <br />
+            <a
+              class="button"
+              href="Diploma/1472.1472.17c5789b1ef07cfe841018951220fa39c2827ea78e85a307125af7b649a0d5bc.pdf"
+              target="_blank"
+              >Dowload Certification</a
+            >
+          </div>
+          <div>
+            <span>1993 - 1996</span>
+            <h3>Administração - Fundação Bradesco</h3>
+            <p>Concluido</p>
+          </div>
+          <ul>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cursos">
+        <div class="my_skill">
+          <h2><i class="fa-sharp fa-regular fa-star"></i>MY Courses</h2>
+          <div class="skill_content">
+            <h3>CS50-programming art</h3>
+            <img
+              src="img/Harvard.png"
+              alt="Entidade 1"
+              class="completed-badge"
+            />
+          </div>
+          <div class="skill_content">
+            <h3>Azure Devops</h3>
+            <img
+              src="img/Microsoft.png"
+              alt="Entidade 1"
+              class="completed-badge"
+            />
+          </div>
+          <div class="skill_content">
+            <h3>Carreira .Net Developer</h3>
+            <img
+              src="img/Carreira.png"
+              alt="Entidade 1"
+              class="completed-badge"
+            />
+          </div>
+          <div class="skill_content">
+            <h3>Scrum/Kanban</h3>
+            <img src="img/GM.png" alt="Entidade 1" class="completed-badge" />
+          </div>
+          <div class="skill_content">
+            <h3>Power BI Data Science IA</h3>
+            <img
+              src="img/Microsoft.png"
+              alt="Entidade 1"
+              class="completed-badge"
+            />
+          </div>
+          <div class="skill_content">
+            <h3>Analise & Desenvolvimento de Sistemas</h3>
+            <img
+              src="img/Uniasselvi.png"
+              alt="Entidade 1"
+              class="completed-badge"
+            />
+          </div>
+        </div>
+        <div class="funfacts">
+          <h2><i class="fa-solid fa-heart"></i>Design Patterns</h2>
+          <ul>
+            <li>
+              <i class="fa-solid fa-mug-hot"></i>
+              <span>Creational</span>
+              <p>Singleton/Factory/Abstract</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-folder-tree"></i>
+              <span>Structural</span>
+              <p>Adapter/Decorator/Composite</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-user"></i>
+              <span>Behavioral</span>
+              <p>Observer/Strategy/Command</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-sitemap"></i>
+              <span>Architectural</span>
+              <p>MVC/MVP/MVVM/DDD/DI/TDD</p>
+            </li>
+            <li>
+              <i class="fa-solid fa-database"></i>
+              <span>Data Persistence</span>
+              <p>Repository/Unit of Work</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div class="sobre_titulo">
+        <h1>Projects</h1>
+        <p>Projects I have experience</p>
+        <div aria-label="Seção apenas de ilustrações de botões">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="project_models">
+        <ul
+          class="project_navegacao"
+          aria-label="Navegação entre modelos expecificos de projetos"
+        >
+          <li class="all">All</li>
+          <li class="design">APIs</li>
+          <li class="graphic">financial projects</li>
+          <li class="website">microservices</li>
+        </ul>
+      </div>
+      <div class="projects_armazenamento">
+        <ul aria-label="Navegação de projetos e websites">
+          <li id="design">
+            <img
+              src="imgs/ecommerce.jpeg"
+              alt="Site criado para ser um ecommerce geral"
+            />
+          </li>
+          <li id="design">
+            <img src="imgs/Api.png" alt="Api imagem" />
+          </li>
+          <li id="graphic">
+            <img src="imgs/Finance.gif" alt="Finance" />
+          </li>
+          <li id="graphic">
+            <img src="imgs/Micro.png" alt="Landing page da Apple" />
+          </li>
+          <li id="website">
+            <img src="imgs/Microservices.png" alt="Microservices" />
+          </li>
+        </ul>
+      </div>
+      <a href="#">Load More Portfólio</a>
+    </section>
+    <section id="philosophy">
+      <footer>
+        <div class="sobre_titulo">
+          <h1>Philosophy and social links</h1>
+          <p>
+            Mantenha sempre seus pensamentos em equilibrio! as melhores decisões
+            de nossas vidas são tomadas em estado de equilibrio.
+          </p>
+        </div>
+        <nav aria-label="navegação de links sociais">
+          <ul class="footer_sociais">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/seteve-analista-dev-sistemas"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Seteve-conde" target="_blank">
+                <i class="fa-brands fa-github-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <p class="footer_comercial">My Portfolio &copy; - 2023</p>
+      </footer>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
